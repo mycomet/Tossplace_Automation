@@ -9,12 +9,15 @@ import psutil
 from appium import webdriver
 from config import get_driver_options
 
-
 @pytest.fixture(scope="session")
 def appium_server():
     "Appium 서버 실행 및 종료 관리"
-    appium_path = r"C:\Users\comet\AppData\Roaming\npm\appium.cmd"
-
+    
+    appium_path = os.environ.get(
+    "PATH_APPIUM",
+    os.path.expandvars(r"%APPDATA%\npm\appium.cmd")  # 사용자에 따라 appium 실행 경로 자동 설정
+    )
+    
     # Appium 서버 실행
     server = subprocess.Popen(
         [appium_path, "--allow-cors"],
@@ -38,7 +41,6 @@ def appium_server():
             print("Appium 서버가 이미 종료됨")
     except Exception as e:
         print(f"서버 종료 실패: {e}")
-
 
 @pytest.fixture(scope="session")
 def driver(appium_server):
