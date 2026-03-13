@@ -1,0 +1,5 @@
+pytest==8.4.2
+Appium-Python-Client==5.2.4
+selenium==4.35.0
+psutil==7.0.0
+pytest-html==4.1.1
