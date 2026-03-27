@@ -25,6 +25,7 @@ def login_flow(page, phone, password):
 
     handle_samsung_pass(page.driver)
 
+@pytest.mark.device
 @pytest.mark.login
 @pytest.mark.parametrize("set_name, case", test_params, ids=test_ids)
 def test_login(driver, page, ensure_login_screen, set_name, case):
