@@ -187,26 +187,41 @@ options.set_capability("deviceName", "AndroidDevice")
 
 ---
 
-# Run Tests
+# CI (GitHub Actions)
 
-Run all tests:
+This project uses GitHub Actions to automatically validate the test framework on each push and pull request.
 
-```bash
-pytest -v
-```
+The CI pipeline performs:
 
-Run a specific test file:
+- Test collection to verify test structure
+- Execution of non-device tests (if available)
 
-```bash
-pytest tests/test_login.py -v
-```
+> Note: Mobile device-based tests require a real Android device and are excluded from CI.  
+> These tests are intended to be executed locally.
 
 ---
 
-# Example Test Execution
+# Run Tests
+
+### Appium Server
+
+The Appium driver is automatically initialized within the test framework.
+
+In most cases, you do not need to manually start the Appium server before running tests.
+
+> Note: Make sure Appium is properly installed and available in your environment.
+
+---
+
+### Run all tests
 
 ```bash
 pytest -v
+```
+
+### Run a specific test file
+
+```bash
 pytest tests/test_login.py -v
 ```
 
