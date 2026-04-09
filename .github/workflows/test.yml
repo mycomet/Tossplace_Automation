@@ -21,14 +21,22 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-        
+
     - name: Run tests with Allure
       run: |
-        pytest --collect-only
         pytest -m "not device" --alluredir=allure-results || true
 
-    - name: Upload Allure results
-      uses: actions/upload-artifact@v4
+    - name: Install Allure CLI
+      run: |
+        npm install -g allure-commandline --save-dev
+
+    - name: Generate Allure Report
+      run: |
+        allure generate allure-results -o allure-report
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        name: allure-results
-        path: allure-results
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: gh-pages
+        publish_dir: ./allure-report
