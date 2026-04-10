@@ -1,1 +1,1 @@
-{}
+{"d06006aed46aa851cbfa46c946b72b88":{"statistic":{"failed":0,"broken":1,"skipped":0,"passed":0,"unknown":0,"total":1},"items":[{"uid":"a06bf9a4933d8ed1","status":"broken","statusDetails":"FileNotFoundError: [Errno 2] No such file or directory: '%APPDATA%\\\\npm\\\\appium.cmd'","time":{"start":1775819673178,"stop":1775819673178,"duration":0}}]}}

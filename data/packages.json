@@ -1,1 +1,1 @@
-{"uid":"83edc06c07f9ae9e47eb6dd1b683e4e2","name":"packages","children":[]}
+{"uid":"83edc06c07f9ae9e47eb6dd1b683e4e2","name":"packages","children":[{"name":"tests.test_smoke","children":[{"name":"test_ci_smoke","uid":"a06bf9a4933d8ed1","parentUid":"51f16eb4734ba7cb9be1833206c8fca0","status":"broken","time":{"start":1775819673178,"stop":1775819673178,"duration":0},"flaky":false,"newFailed":false,"newPassed":false,"newBroken":false,"retriesCount":0,"retriesStatusChange":false,"parameters":[],"tags":[]}],"uid":"tests.test_smoke"}]}
