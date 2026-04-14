@@ -15,6 +15,15 @@ from config import (
 )
 from pages.login_page import LoginPage
 
+
+def pytest_collection_modifyitems(config, items):
+    if os.getenv("CI") == "true":
+        skip_device = pytest.mark.skip(reason="Skipping device tests in CI")
+        for item in items:
+            if "device" in item.keywords:
+                item.add_marker(skip_device)
+
+
 @pytest.fixture(scope="session")
 def appium_server():
     logging.info("[INIT] Appium 서버 실행 중...")
