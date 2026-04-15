@@ -26,6 +26,10 @@ def pytest_collection_modifyitems(config, items):
 
 @pytest.fixture(scope="session")
 def appium_server():
+    if os.getenv("CI") == "true":
+        yield
+        return
+    
     logging.info("[INIT] Appium 서버 실행 중...")
 
     appium_path = os.environ.get(
@@ -70,6 +74,10 @@ def appium_server():
 
 @pytest.fixture(scope="session")
 def driver(appium_server):
+    if os.getenv("CI") == "true":
+        yield None
+        return
+    
     logging.info("[SETUP] Appium 드라이버 세션 생성 중...")
 
     driver = webdriver.Remote(APPIUM_SERVER_URL, options=get_driver_options())
@@ -84,6 +92,10 @@ def driver(appium_server):
 @pytest.fixture(autouse=True)
 def reset_between_sets(request, driver):
     """테스트 데이터 세트(set_name) 변경 시 앱 재시작."""
+    if request.node.get_closest_marker("device") is None:
+        yield
+        return
+    
     callspec = getattr(request.node, "callspec", None)
     set_name = callspec.params.get("set_name") if callspec else None
     prev = getattr(request.session, "last_set_name", None)
@@ -108,8 +120,12 @@ def page(driver):
 
 
 @pytest.fixture(scope="function", autouse=True)
-def ensure_login_screen(page, reset_between_sets):
+def ensure_login_screen(request, page, reset_between_sets):
     """각 테스트 함수 실행 전 로그인 화면 상태를 보장하는 fixture."""
+    if request.node.get_closest_marker("device") is None:
+        yield
+        return
+    
     if not page.is_on_login_screen():
         page.navigate_to_login_screen()
 
