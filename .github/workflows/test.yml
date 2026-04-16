@@ -37,9 +37,19 @@ jobs:
       run: |
         allure generate allure-results -o allure-report
 
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: gh-pages
-        publish_dir: ./allure-report
+    - name: Deploy CI report to gh-pages
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+
+        git clone --depth=1 https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} gh-pages
+        cd gh-pages
+
+        mkdir -p ci
+        rm -rf ci/*
+
+        cp -r ../allure-report/* ci/
+
+        git add .
+        git commit -m "deploy: update CI test report" || echo "No changes"
+        git push
