@@ -45,11 +45,13 @@ jobs:
         git clone --depth=1 https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} gh-pages
         cd gh-pages
 
+        git checkout gh-pages
+
         mkdir -p ci
         rm -rf ci/*
 
-        cp -r ../allure-report/* ci/
+        cp -r $GITHUB_WORKSPACE/allure-report/* ci/
 
         git add .
         git commit -m "deploy: update CI test report" || echo "No changes"
-        git push
+        git push origin gh-pages
