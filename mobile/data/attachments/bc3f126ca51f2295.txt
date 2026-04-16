@@ -1,0 +1,3 @@
+[32mINFO    [0m root:test_login.py:42 [START] SET2_CASE2 - 비밀번호 미입력 (전화번호: ****2222, 비밀번호: 없음)
+[32mINFO    [0m root:login_page.py:39 아이디, 비번 입력 완료
+[32mINFO    [0m root:test_login.py:58 [RESULT][SET2_CASE2] 테스트 완료

@@ -1,0 +1,4 @@
+[32mINFO    [0m root:conftest.py:105 [RESET] 세트 변경 감지: set1 → set2
+[32mINFO    [0m root:test_login.py:42 [START] SET2_CASE1 - 로그인 정보 미입력 (전화번호: 없음, 비밀번호: 없음)
+[32mINFO    [0m root:login_page.py:39 아이디, 비번 입력 완료
+[32mINFO    [0m root:test_login.py:58 [RESULT][SET2_CASE1] 테스트 완료

@@ -1,0 +1,8 @@
+[32mINFO    [0m root:test_login.py:42 [START] SET2_CASE4 - 잘못된 계정 정보 입력 (전화번호: ****2476, 비밀번호: ****)
+[32mINFO    [0m root:login_page.py:39 아이디, 비번 입력 완료
+[32mINFO    [0m root:test_login.py:53 [VALIDATION] 에러 메시지 감지: 'ID를 확인해 주세요'
+[32mINFO    [0m root:test_login.py:58 [RESULT][SET2_CASE4] 테스트 완료
+[32mINFO    [0m root:conftest.py:87 [TEARDOWN] Appium 드라이버 세션 종료 중...
+[32mINFO    [0m root:conftest.py:89 [TEARDOWN] 드라이버 세션 종료 완료
+[32mINFO    [0m root:conftest.py:56 [TEARDOWN] Appium 서버 중단 중...
+[32mINFO    [0m root:conftest.py:67 [TEARDOWN] Appium 서버 정상 종료
