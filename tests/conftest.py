@@ -73,8 +73,12 @@ def appium_server():
 
 
 @pytest.fixture(scope="session")
-def driver(appium_server):
+def driver(request, appium_server):
     if os.getenv("CI") == "true":
+        yield None
+        return
+
+    if not any("device" in item.keywords for item in request.session.items):
         yield None
         return
     
@@ -87,7 +91,7 @@ def driver(appium_server):
     logging.info("[TEARDOWN] Appium 드라이버 세션 종료 중...")
     driver.quit()
     logging.info("[TEARDOWN] 드라이버 세션 종료 완료")
-
+    
 
 @pytest.fixture(autouse=True)
 def reset_between_sets(request, driver):
