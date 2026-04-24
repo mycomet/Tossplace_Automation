@@ -25,6 +25,17 @@ of the Tossplace app, with a focus on **scalability, maintainability, and CI int
 
 ---
 
+## 📌 Test Environment
+
+This project is based on the Tossplace (Toss POS) application.
+
+The app is designed for store owners and requires a specific business environment to access and use.
+Therefore, the test scenarios are focused on login flows within a controlled environment.
+
+Due to these constraints, full execution may require access to a valid test account and a compatible Android device
+
+---
+
 ## 🧠 Why This Project
 
 Mobile login testing often requires repeatedly validating multiple input scenarios
