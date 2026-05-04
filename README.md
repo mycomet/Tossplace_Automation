@@ -1,11 +1,13 @@
 # Android Mobile Test Automation Framework (Appium + Pytest)
 
-[![CI Status](https://github.com/mycomet/android-test-automation-framework/actions/workflows/test.yml/badge.svg)](https://github.com/mycomet/android-test-automation-framework/actions)
-![Python](https://img.shields.io/badge/Python-3.9+-blue)
-![Platform](https://img.shields.io/badge/Platform-Android-green)
-![Framework](https://img.shields.io/badge/Appium-Automation-orange)
-![Test](https://img.shields.io/badge/Pytest-Framework-yellow)
-![Report](https://img.shields.io/badge/Allure-Report-purple)
+[![CI](https://img.shields.io/github/actions/workflow/status/mycomet/android-test-automation-framework/test.yml?style=for-the-badge&label=CI)](https://github.com/mycomet/android-test-automation-framework/actions)
+
+![Python](https://img.shields.io/badge/python-3776AB.svg?style=for-the-badge&logo=python&logoColor=white)
+![Android](https://img.shields.io/badge/android-3DDC84.svg?style=for-the-badge&logo=android&logoColor=white)
+![Appium](https://img.shields.io/badge/appium-EE376D.svg?style=for-the-badge&logo=appium&logoColor=white)
+![Pytest](https://img.shields.io/badge/pytest-0A9EDC.svg?style=for-the-badge&logo=pytest&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/github%20actions-2671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
+![Allure](https://img.shields.io/badge/allure-FF6C37.svg?style=for-the-badge)
 
 An automation framework for Android login testing built with Appium and Pytest,
 using the Page Object Model architecture.
@@ -104,13 +106,12 @@ without changing the overall structure.
 
 ## 🧩 Tech Stack
 
-* Python
-* Appium
-* Pytest
-* Selenium WebDriver
-* Android UIAutomator2
-* GitHub Actions
-* Allure Report
+- **Language**: Python  
+- **Automation**: Appium, Selenium WebDriver  
+- **Testing**: Pytest  
+- **Mobile**: Android UIAutomator2  
+- **CI/CD**: GitHub Actions  
+- **Reporting**: Allure Report  
 
 ---
 
